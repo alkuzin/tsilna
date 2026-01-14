@@ -1,0 +1,13 @@
+# SPDX-License-Identifier: Apache-2.0.
+# Copyright (C) 2026-present tsilna-nav project and contributors.
+
+# Collection of packages section.
+[workspace]
+# List of workspace packages.
+members = [
+    "tsilna-nav",
+    "tsilna-protocol",
+]
+# The resolver is a global option that affects the entire workspace.
+# Type "3" mean (edition = "2024" default, requires Rust 1.84+).
+resolver = "3"
