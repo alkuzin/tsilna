@@ -1,0 +1,11 @@
+# SPDX-License-Identifier: Apache-2.0.
+# Copyright (C) 2026-present tsilna-nav project and contributors.
+
+.vscode/
+.idea/
+target/
+tmp/
+
+*.bin
+*.txt
+*.log
