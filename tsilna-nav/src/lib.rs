@@ -8,3 +8,6 @@
 
 #[cfg(feature = "protocol")]
 pub use tsilna_protocol as protocol;
+
+#[cfg(feature = "math")]
+pub use tsilna_math as math;

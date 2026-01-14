@@ -1,0 +1,15 @@
+# SPDX-License-Identifier: Apache-2.0.
+# Copyright (C) 2026-present tsilna-nav project and contributors.
+
+# Project package info section.
+[package]
+name        = "tsilna-math"
+version     = "0.1.0"
+description = "Math library for autonomous navigation systems"
+authors     = ["Alexander <alkuzindev@gmail.com>"]
+repository  = "https://github.com/alkuzin/tsilna/tsilna-math"
+license     = "Apache-2.0"
+edition     = "2024"
+
+# Project dependencies section.
+[dependencies]

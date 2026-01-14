@@ -1,11 +1,24 @@
+# SPDX-License-Identifier: Apache-2.0.
+# Copyright (C) 2026-present tsilna-nav project and contributors.
+
+# Project package info section.
 [package]
-name = "tsilna-nav"
-version = "0.1.0"
-edition = "2024"
+name        = "tsilna-nav"
+version     = "0.1.0"
+description = "Memory-safe autonomous navigation framework"
+authors     = ["Alexander <alkuzindev@gmail.com>"]
+repository  = "https://github.com/alkuzin/tsilna/tsilna-nav"
+license     = "Apache-2.0"
+edition     = "2024"
 
-
+# Project features section.
 [features]
 protocol = []
+math = []
 
+# Project dependencies section.
 [dependencies]
+# Binary protocols implementation and utilities.
 tsilna-protocol = { path = "../tsilna-protocol" }
+# Math library for autonomous navigation systems.
+tsilna-math = { path = "../tsilna-math" }
