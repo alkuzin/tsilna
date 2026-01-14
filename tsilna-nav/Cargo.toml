@@ -13,12 +13,12 @@ edition     = "2024"
 
 # Project features section.
 [features]
-protocol = []
-math = []
+protocol = ["dep:tsilna-protocol"]
+math = ["dep:tsilna-math"]
 
 # Project dependencies section.
 [dependencies]
 # Binary protocols implementation and utilities.
-tsilna-protocol = { path = "../tsilna-protocol" }
+tsilna-protocol = { path = "../tsilna-protocol", optional = true }
 # Math library for autonomous navigation systems.
-tsilna-math = { path = "../tsilna-math" }
+tsilna-math = { path = "../tsilna-math", optional = true }
