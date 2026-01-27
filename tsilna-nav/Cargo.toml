@@ -15,7 +15,8 @@ edition     = "2024"
 [features]
 protocol = ["tsilna-protocol"]
 math = ["tsilna-math"]
-software_impl = ["protocol", "tsilna-protocol/software_impl"]
+# Use software implementation for calculating CRC/HMAC-SHA256.
+idtp_sw_impl = ["protocol", "tsilna-protocol/idtp_sw_impl"]
 default = []
 
 # Project dependencies section.

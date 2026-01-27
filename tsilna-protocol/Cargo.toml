@@ -11,6 +11,11 @@ repository  = "https://github.com/alkuzin/tsilna/tsilna-protocol"
 license     = "Apache-2.0"
 edition     = "2024"
 
+# Project features section.
+[features]
+# Use software implementation for calculating CRC/HMAC-SHA256.
+idtp_sw_impl = ["idtp/software_impl"]
+
 # Project dependencies section.
 [dependencies]
 # Inertial Measurement Unit Data Transfer Protocol (IDTP) - network protocol
