@@ -13,9 +13,10 @@ edition     = "2024"
 
 # Project features section.
 [features]
-protocol = ["dep:tsilna-protocol"]
-math = ["dep:tsilna-math"]
-software_impl = ["tsilna-protocol/software_impl"]
+protocol = ["tsilna-protocol"]
+math = ["tsilna-math"]
+software_impl = ["protocol", "tsilna-protocol/software_impl"]
+default = []
 
 # Project dependencies section.
 [dependencies]
