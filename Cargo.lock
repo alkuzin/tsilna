@@ -83,8 +83,8 @@ dependencies = [
 
 [[package]]
 name = "idtp"
-version = "2.0.0"
-source = "git+https://github.com/alkuzin/idtp#92da47dec389e47ba2289f509c5bdbeb1374ba09"
+version = "2.1.0"
+source = "git+https://github.com/alkuzin/idtp#0f9f407619f00c14d025e153e6f61dcc4671f20d"
 dependencies = [
  "crc",
  "hmac",
