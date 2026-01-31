@@ -20,6 +20,6 @@ idtp_sw_impl = ["idtp/software_impl"]
 [dependencies]
 # Inertial Measurement Unit Data Transfer Protocol (IDTP) - network protocol
 # used for transferring IMU data.
-idtp = { git = "https://github.com/alkuzin/idtp", version = "2.1.0" }
+idtp = { git = "https://github.com/alkuzin/idtp", version = "3.0.0" }
 # Rust implementation of CRC.
 crc = "3.4"
