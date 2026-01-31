@@ -4,11 +4,12 @@
 # Collection of packages section.
 [workspace]
 # List of workspace packages.
-members = [
-    "tsilna-nav",
-    "tsilna-protocol",
-    "tsilna-math",
-]
+members = ["tsilna-nav", "tsilna-protocol", "tsilna-math"]
 # The resolver is a global option that affects the entire workspace.
 # Type "3" mean (edition = "2024" default, requires Rust 1.84+).
 resolver = "3"
+
+# Collection of common dependencies.
+[workspace.dependencies]
+# Linear algebra library.
+nalgebra = { version = "0.34.1", default-features = false, features = ["libm"] }
