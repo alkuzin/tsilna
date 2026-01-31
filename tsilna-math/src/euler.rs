@@ -3,7 +3,10 @@
 
 //! Declarations for orientation of the body in 3D space.
 
-use crate::{na::{self, RealField}, Quaternion};
+use crate::{
+    Quaternion,
+    na::{self, RealField},
+};
 
 /// Alias for 32-bit version of Euler angles.
 pub type Euler32 = Euler<f32>;
@@ -83,9 +86,9 @@ impl<T: RealField + Copy> Euler<T> {
 
 #[cfg(test)]
 mod tests {
+    use super::*;
     use approx::assert_relative_eq;
     use core::f64::consts;
-    use super::*;
 
     #[test]
     fn test_euler_from_radians() {

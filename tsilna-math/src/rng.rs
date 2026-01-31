@@ -22,7 +22,8 @@ impl Xorshift {
     ///
     /// # Returns
     /// - New `Rng` object.
-    pub fn new(seed: u32) -> Self {
+    #[must_use]
+    pub const fn new(seed: u32) -> Self {
         Self { state: seed }
     }
 
@@ -30,7 +31,7 @@ impl Xorshift {
     ///
     /// # Returns
     /// - Next pseudo-random number as u32.
-    pub fn next_u32(&mut self) -> u32 {
+    pub const fn next_u32(&mut self) -> u32 {
         let mut x = self.state;
         x ^= x << 13;
         x ^= x >> 17;
@@ -46,6 +47,7 @@ impl Xorshift {
     ///
     /// # Returns
     /// - Next pseudo-random number as f32.
+    #[allow(clippy::cast_precision_loss)]
     pub fn next_f32(&mut self, range: Range<f32>) -> f32 {
         let (min, max) = (range.start, range.end);
         let r = self.next_u32() as f32 / u32::MAX as f32;
@@ -74,7 +76,11 @@ mod tests {
 
         for _ in 0..1000 {
             let val = rng.next_f32(range.clone());
-            assert!(val >= range.start && val <= range.end, "Value {} out of range", val);
+            assert!(
+                val >= range.start && val <= range.end,
+                "Value {} out of range",
+                val
+            );
         }
     }
 
@@ -82,7 +88,7 @@ mod tests {
     fn test_state_advances() {
         let mut rng = Xorshift::new(1);
 
-        let first  = rng.next_u32();
+        let first = rng.next_u32();
         let second = rng.next_u32();
 
         assert_ne!(first, second);

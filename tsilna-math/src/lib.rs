@@ -15,9 +15,9 @@
     missing_docs
 )]
 
+pub mod euler;
 pub mod rng;
 mod types;
-pub mod euler;
 
-pub use types::*;
 pub use nalgebra as na;
+pub use types::*;

@@ -10,6 +10,8 @@
 ///
 /// # Returns
 /// - Internet checksum of a given buffer.
+#[allow(clippy::cast_possible_truncation)]
+#[must_use]
 pub fn calculate_checksum(buffer: &[u8]) -> u16 {
     let len = buffer.len();
 
@@ -18,16 +20,17 @@ pub fn calculate_checksum(buffer: &[u8]) -> u16 {
     }
 
     let mut sum: u32 = 0;
-    let mut i = 0;
 
-    while i < len - 1 {
-        let word = u16::from_be_bytes([buffer[i], buffer[i + 1]]);
-        sum += word as u32;
-        i += 2;
+    let mut chunks = buffer.chunks_exact(2);
+    for chunk in &mut chunks {
+        if let &[b0, b1] = chunk {
+            let word = u16::from_be_bytes([b0, b1]);
+            sum += u32::from(word);
+        }
     }
 
-    if i < len {
-        sum += (buffer[i] as u32) << 8;
+    if let Some(&last_byte) = chunks.remainder().first() {
+        sum += u32::from(last_byte) << 8;
     }
 
     while (sum >> 16) != 0 {

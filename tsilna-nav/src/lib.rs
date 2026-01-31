@@ -5,6 +5,16 @@
 //! suitable both for `embedded systems` & general-purpose operating systems.
 
 #![no_std]
+#![warn(clippy::all, clippy::pedantic, clippy::nursery)]
+#![deny(
+    clippy::unwrap_used,
+    clippy::expect_used,
+    clippy::indexing_slicing,
+    clippy::panic,
+    clippy::todo,
+    clippy::unreachable,
+    missing_docs
+)]
 
 #[cfg(feature = "protocol")]
 pub use tsilna_protocol as protocol;
