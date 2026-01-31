@@ -4,5 +4,20 @@
 //! Math library for autonomous navigation systems.
 
 #![no_std]
+#![warn(clippy::all, clippy::pedantic, clippy::nursery)]
+#![deny(
+    clippy::unwrap_used,
+    clippy::expect_used,
+    clippy::indexing_slicing,
+    clippy::panic,
+    clippy::todo,
+    clippy::unreachable,
+    missing_docs
+)]
 
 pub mod rng;
+mod types;
+pub mod euler;
+
+pub use types::*;
+pub use nalgebra as na;

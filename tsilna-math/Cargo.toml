@@ -4,7 +4,7 @@
 # Project package info section.
 [package]
 name        = "tsilna-math"
-version     = "0.1.0"
+version     = "0.2.0"
 description = "Math library for autonomous navigation systems"
 authors     = ["Alexander <alkuzindev@gmail.com>"]
 repository  = "https://github.com/alkuzin/tsilna/tsilna-math"
@@ -13,3 +13,9 @@ edition     = "2024"
 
 # Project dependencies section.
 [dependencies]
+# Linear algebra library.
+nalgebra = { workspace = true }
+# A crate that provides facilities for testing the approximate equality of
+# floating-point based types, using either relative difference,
+# or units in the last place (ULPs) comparisons.
+approx = "0.5.1"
